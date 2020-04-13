@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 
 class Results extends Component {
     render() {
-        const bookList = this.props.bookList;
+        const bookList = this.props.bookList.map((book,index) => <li key={index}>
+            <h2>{book.volumeInfo.title}</h2>
+            <img src={book.volumeInfo.imageLinks.thumbnail} alt=""/>
+            </li>);
         return(
             <section>
-                <ul>{bookList}</ul>
+                <ul style= {{listStyle:"none"}}>
+                    {bookList} 
+                </ul>
                 <h2>Henry 1</h2>
                 <p>Author:  C. Warren Hollister</p>
                 <p>Price:  $50.00</p>

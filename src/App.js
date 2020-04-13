@@ -8,7 +8,7 @@ class App extends Component {
     q: "",
     printType:"all",
     filter: "ebooks",
-    bookList:{}
+    bookList:[]
   };
 
 getBook = (e) => {
@@ -17,7 +17,7 @@ getBook = (e) => {
     // let apiKey = "AIzaSyCKMOl3iAm-09f6nFinUXZpel6JDyfyQnc"
     fetch(url)
     .then(results => results.json()) //turns results into JSON object
-    .then(resultJSON => this.getBookList(resultJSON))
+    .then(bookList => this.setState({bookList: bookList.items}))
 }
 // encodeURIComponent()
 getSearchTerm = (e) => {
@@ -34,6 +34,7 @@ getPrintType= (type)=>{
 getBookType= (type)=>{
     this.setState({filter: type})
 }
+
 
   render() {
     return (
