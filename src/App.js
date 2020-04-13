@@ -3,18 +3,13 @@ import Results from './Results/Results';
 import Search from './Search/Search';
 
 class App extends Component {
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     userInput: false,
-  //   }
-  // }
 
   state = { 
     q: "",
     printType:"all",
-    filter: "ebooks"
-};
+    filter: "ebooks",
+    bookList:{}
+  };
 
 getBook = (e) => {
     e.preventDefault();
