@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      userInput: "false",
+      userInput: false,
     }
   }
   render() {
