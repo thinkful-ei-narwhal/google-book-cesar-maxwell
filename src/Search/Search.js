@@ -6,25 +6,25 @@ export default class Search extends Component{
     //     super(props)
     // }
     
-    getBook = () => {
-        let userInput = ""; //userInput goes between the quotes, fetched from react
-        let url = 'https://www.googleapis.com/books/v1/volumes?q=quilting';
-        let apiKey = "AIzaSyCKMOl3iAm-09f6nFinUXZpel6JDyfyQnc"
+    getBook = (q, printType,filter) => {
+        let url = 'https://www.googleapis.com/books/v1/volumes?q=quilting/printType=all/filter=free-ebook';
+        // let apiKey = "AIzaSyCKMOl3iAm-09f6nFinUXZpel6JDyfyQnc"
         fetch(url)
         .then(results => results.json()) //turns results into JSON object
         .then(resultJSON => console.log(resultJSON))
     }
+
     render(){
         this.getBook();
         return(
-            <div>
+            <section className="searchinfo">
                 <form type="input">
-                    <label>Search</label><br />
-                    <input type="text"></input>
+                    <label htmlFor="searchTerm">Search</label><br />
+                    <input type="text" id="searchTerm" name="searchTerm"></input>
                     <button type="submit">Search</button>
                 </form>
                 <Filter/>
-            </div>
+            </section>
         )
     }
 }

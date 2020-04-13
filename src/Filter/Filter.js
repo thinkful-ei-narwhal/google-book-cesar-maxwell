@@ -13,6 +13,7 @@ class Filter extends Component {
                 </select>
                 <label >Book Type:</label>
                 <select id="BookType" name="BookType">
+                    <option value="no-filter">no filter</option>
                     <option value="ebooks">ebooks</option>
                     <option value="free-ebook">free ebooks</option>
                     <option value="paid-ebooks">paid ebooks</option>
