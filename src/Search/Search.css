@@ -1,0 +1,9 @@
+label,input,button{
+    margin: 5px;
+}
+form{
+    background-color: gray;
+    padding-left: 10px;
+    font-size: medium;
+    font-weight: bold;
+}

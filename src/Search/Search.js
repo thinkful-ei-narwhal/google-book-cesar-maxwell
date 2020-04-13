@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Filter from '../Filter/Filter';
+import "./Search.css"
 
 export default class Search extends Component{
 
@@ -7,7 +8,7 @@ export default class Search extends Component{
         return(
             <section className="searchinfo">
                 <form type="input" onSubmit={e => this.props.getBook(e)}>
-                    <label htmlFor="searchTerm">Search</label><br />
+                    <label htmlFor="searchTerm">Search</label>
                     <input type="text" id="searchTerm" name="searchTerm" onChange={e=>this.props.getSearchTerm(e)}></input>
                     <button type="submit" value="submit">Search</button>
                 </form>
