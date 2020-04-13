@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Search from './Search/Search';
+
 function App() {
   return (
     <div className="App">
@@ -8,8 +10,6 @@ function App() {
       </header>
       <main>
       <Search/>
-      <Filter/>
-      <Results/>
       </main>
     </div>
   );
