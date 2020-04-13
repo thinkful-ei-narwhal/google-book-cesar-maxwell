@@ -10,7 +10,6 @@ li{
 }
 img {
     min-width: 200px;
-    float: left;
 }
 .infoContainer{
     display: flex;
