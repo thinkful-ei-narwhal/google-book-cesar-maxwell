@@ -12,6 +12,8 @@ function App() {
       </header>
       <main>
       <Search/>
+      <Filter/>
+      <Results/>
       </main>
     </div>
   );
