@@ -2,27 +2,12 @@ import React, {Component} from 'react';
 import Filter from '../Filter/Filter';
 
 export default class Search extends Component{
-    constructor(props){
-        super(props)
-        this.state ={
-            userInput: "This is User Input",
-            submittedForm: false,
-        }
-    }
-    getSearchTerm = (e) => {
-        e.preventDefault();
-        let toggleSubmitted = true;
-        let newInput = e.target.searchTerm.value;
-        this.setState({
-            userInput: newInput,
-            submittedForm: toggleSubmitted, 
-        })
-    }
 
     state = { 
         q: "",
         printType:"all",
-        filter: "no-filter"
+        filter: "no-filter",
+        submittedForm: false
     };
     
     getBook = (q, printType,filter) => {
@@ -31,6 +16,14 @@ export default class Search extends Component{
         fetch(url)
         .then(results => results.json()) //turns results into JSON object
         .then(resultJSON => console.log(resultJSON))
+    }
+
+    getSearchTerm = (e) => {
+        e.preventDefault();
+        this.setState({
+            q: e.target.searchTerm.value,
+            submittedForm: true, 
+        })
     }
 
     getPrintType= (type)=>{
@@ -43,13 +36,9 @@ export default class Search extends Component{
 
     render(){
         this.getBook();
-
-        //this.getSearchTerm();
         return(
             <section className="searchinfo">
-                <form type="input" onSubmit={e => {
-                    this.getSearchTerm(e);
-                    }}>
+                <form type="input" onSubmit={e => this.getSearchTerm(e)}>
                     <label htmlFor="searchTerm">Search</label><br />
                     <input type="text" id="searchTerm" name="searchTerm"></input>
                     <button type="submit" value="submit">Search</button>
