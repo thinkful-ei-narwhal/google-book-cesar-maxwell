@@ -1,5 +1,7 @@
 import React from 'react';
 import Filter from './Filter/Filter';
+import Results from './Results/Results';
+
 function App() {
   return (
     <div className="App">
