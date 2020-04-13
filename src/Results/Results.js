@@ -12,7 +12,7 @@ class Results extends Component {
             <img src={book.volumeInfo.imageLinks.thumbnail} alt=""/>
             </li>);
         return(
-            <section>
+            <section className="list">
                 <ul style= {{listStyle:"none"}}>
                     {bookList} 
                 </ul>
