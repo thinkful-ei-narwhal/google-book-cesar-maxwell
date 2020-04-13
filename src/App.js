@@ -1,4 +1,6 @@
 import React from 'react';
+import Filter from './Filter/Filter';
+import Results from './Results/Results';
 
 import Search from './Search/Search';
 
