@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Filter from './Filter/Filter';
 function App() {
   return (
     <div className="App">
