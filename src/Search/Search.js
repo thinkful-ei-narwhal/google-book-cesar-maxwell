@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Filter from '../Filter/Filter';
 
 export default class Search extends Component{
     // constructor(props){
@@ -12,6 +13,7 @@ export default class Search extends Component{
                     <input type="text"></input>
                     <button type="submit">Search</button>
                 </form>
+                <Filter/>
             </div>
         )
     }

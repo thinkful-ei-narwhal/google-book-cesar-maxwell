@@ -1,5 +1,4 @@
 import React from 'react';
-import Filter from './Filter/Filter';
 import Results from './Results/Results';
 
 import Search from './Search/Search';
@@ -12,7 +11,6 @@ function App() {
       </header>
       <main>
       <Search/>
-      <Filter/>
       <Results/>
       </main>
     </div>
