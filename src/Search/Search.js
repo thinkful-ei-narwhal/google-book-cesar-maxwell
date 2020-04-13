@@ -11,7 +11,9 @@ export default class Search extends Component{
     };
     
     getBook = (q, printType,filter) => {
-        let url = 'https://www.googleapis.com/books/v1/volumes?q=quilting/printType=all/filter=free-ebook';
+        console.log(q,printType,filter );
+
+        let url = `https://www.googleapis.com/books/v1/volumes?q=${q}/printType=${printType}/filter=${filter}`;
         // let apiKey = "AIzaSyCKMOl3iAm-09f6nFinUXZpel6JDyfyQnc"
         fetch(url)
         .then(results => results.json()) //turns results into JSON object
@@ -35,10 +37,12 @@ export default class Search extends Component{
     }
 
     render(){
-        this.getBook();
         return(
             <section className="searchinfo">
-                <form type="input" onSubmit={e => this.getSearchTerm(e)}>
+                <form type="input" onSubmit={e => {
+                    this.getSearchTerm(e)
+                    this.getBook(this.state.q, this.state.printType,this.state.filter);
+                }}>
                     <label htmlFor="searchTerm">Search</label><br />
                     <input type="text" id="searchTerm" name="searchTerm"></input>
                     <button type="submit" value="submit">Search</button>
