@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css';
 
 function App() {
   return (
     <div className="App">
-      {/* dbjbg */}
+      <header>
+        <h1>Google Book Search</h1>
+      </header>
     </div>
   );
 }
