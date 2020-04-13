@@ -6,13 +6,13 @@ class Filter extends Component {
         return(
             <section>
                 <label >Print Type:</label>
-                <select id="printType" name="printType">
+                <select id="printType" name="printType" onChange={e =>  this.props.getPrintType(e.currentTarget.value)}>
                     <option value="all">all</option>
                     <option value="books">books</option>
                     <option value="magazines">magazines</option>
                 </select>
                 <label >Book Type:</label>
-                <select id="BookType" name="BookType">
+                <select id="bookType" name="bookType" onChange={e =>  this.props.getBookType(e.currentTarget.value)}>
                     <option value="no-filter">no filter</option>
                     <option value="ebooks">ebooks</option>
                     <option value="free-ebook">free ebooks</option>
