@@ -19,12 +19,26 @@ export default class Search extends Component{
         })
     }
 
+    state = { 
+        q: "",
+        printType:"all",
+        filter: "no-filter"
+    };
+    
     getBook = (q, printType,filter) => {
         let url = 'https://www.googleapis.com/books/v1/volumes?q=quilting/printType=all/filter=free-ebook';
         // let apiKey = "AIzaSyCKMOl3iAm-09f6nFinUXZpel6JDyfyQnc"
         fetch(url)
         .then(results => results.json()) //turns results into JSON object
         .then(resultJSON => console.log(resultJSON))
+    }
+
+    getPrintType= (type)=>{
+        this.setState({printType: type})
+
+    }
+    getBookType= (type)=>{
+        this.setState({filter: type})
     }
 
     render(){
@@ -40,7 +54,10 @@ export default class Search extends Component{
                     <input type="text" id="searchTerm" name="searchTerm"></input>
                     <button type="submit" value="submit">Search</button>
                 </form>
-                <Filter/>
+                <Filter
+                getPrintType= {this.getPrintType}
+                getBookType= {this.getBookType}
+                />
             </section>
         )
     }
