@@ -4,6 +4,9 @@ class Results extends Component {
     render() {
         const bookList = this.props.bookList.map((book,index) => <li key={index}>
             <h2>{book.volumeInfo.title}</h2>
+            <p>Author:  {book.volumeInfo.authors[0]}</p>
+            <p>Price:  $50.00</p>
+            <p>The resulting volume is one that will be welcomed by students and general readers alike</p>
             <img src={book.volumeInfo.imageLinks.thumbnail} alt=""/>
             </li>);
         return(

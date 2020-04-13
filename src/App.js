@@ -37,6 +37,7 @@ getBookType= (type)=>{
 
 
   render() {
+    console.log(this.state.bookList)
     return (
       <div className="App">
         <header>
