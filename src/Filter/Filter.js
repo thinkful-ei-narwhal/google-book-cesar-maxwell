@@ -5,13 +5,13 @@ class Filter extends Component {
 
         return(
             <section>
-                <label for="printType">Print Type:</label>
+                <label >Print Type:</label>
                 <select id="printType" name="printType">
                     <option value="all">all</option>
                     <option value="books">books</option>
                     <option value="magazines">magazines</option>
                 </select>
-                <label for="BookType">Book Type:</label>
+                <label >Book Type:</label>
                 <select id="BookType" name="BookType">
                     <option value="ebooks">ebooks</option>
                     <option value="free-ebook">free ebooks</option>
