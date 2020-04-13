@@ -17,7 +17,7 @@ getBook = (e) => {
     // let apiKey = "AIzaSyCKMOl3iAm-09f6nFinUXZpel6JDyfyQnc"
     fetch(url)
     .then(results => results.json()) //turns results into JSON object
-    .then(resultJSON => console.log(resultJSON))
+    .then(resultJSON => this.getBookList(resultJSON))
 }
 // encodeURIComponent()
 getSearchTerm = (e) => {
@@ -48,7 +48,9 @@ getBookType= (type)=>{
           getPrintType= {this.getSearchTerm}
           getBookType= {this.getBookType}
           />
-          <Results />
+          <Results 
+          bookList={this.state.bookList}
+          />
         </main>
       </div>
     );

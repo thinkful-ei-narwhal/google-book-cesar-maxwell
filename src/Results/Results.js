@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 class Results extends Component {
     render() {
-
+        const bookList = this.props.bookList;
         return(
             <section>
+                <ul>{bookList}</ul>
                 <h2>Henry 1</h2>
                 <p>Author:  C. Warren Hollister</p>
                 <p>Price:  $50.00</p>
