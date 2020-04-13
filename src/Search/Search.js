@@ -7,7 +7,8 @@ export default class Search extends Component{
     // }
     
     getBook = () => {
-        let url = 'https://www.googleapis.com/books/v1/volumes?q=quilting/printType=all/filter=free-ebook';
+        let userInput = ""; //userInput goes between the quotes, fetched from react
+        let url = 'https://www.googleapis.com/books/v1/volumes?q=quilting';
         let apiKey = "AIzaSyCKMOl3iAm-09f6nFinUXZpel6JDyfyQnc"
         fetch(url)
         .then(results => results.json()) //turns results into JSON object
